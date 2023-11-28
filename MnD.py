@@ -3,10 +3,9 @@ from Main_Window import Ui_MainUI
 from threading import Thread
 
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
-from matplotlib.figure import Figure
 import numpy as np
 
-from motor import calc_args, calc_args_2
+from motor import calc_args_2
 from mplcanvas import MplCanvas
 
 app = QApplication()
@@ -74,7 +73,7 @@ canvas_n = MplCanvas()
 canvas_T = MplCanvas()
 canvas_eta = MplCanvas()
 
-canvas_list = [canvas_Power, canvas_E, canvas_I, canvas_n, canvas_T, canvas_eta]
+canvas_list = (canvas_Power, canvas_E, canvas_I, canvas_n, canvas_T, canvas_eta)
 
 
 def draw_figure():
@@ -113,6 +112,8 @@ def draw_figure():
     canvas_eta.ax.set_title("eta")
     canvas_eta.ax.grid()
 
+    for canva in canvas_list:
+        canva.draw()  # canva并不会自动更新
     # 绘制结束
     pass
 
@@ -134,10 +135,6 @@ def switch_figure():
     ui.Figure_Frame_Layout.addWidget(canvas_list[ui.Figure_SelectBox.currentIndex()])
     pass
 
-
-# To Do:
-# 每次点击绘制，直接新建一个线程，先清空图像，再把8个曲线6张图全部画上去
-# 存六个对象即可，每个对象拿到句柄即可绘制，在ComboBox中选择哪个就把哪个setCentral
 
 # 绑定绘制按钮和ComboBox
 ui.Button_Draw.clicked.connect(draw_8figures)
