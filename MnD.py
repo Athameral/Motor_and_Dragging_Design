@@ -127,6 +127,9 @@ def draw_figure():
 
     canvas_eta.ax.plot(R_L, result[7])
 
+    # TO DO:
+    # 保存Line2D对象，避免重复新建对象，以改进颜色变化问题
+
     for canvas in canvas_list:
         canvas.draw()  # canvas并不会自动更新
     # 绘制结束
