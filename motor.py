@@ -1,4 +1,6 @@
 from math import pi
+from typing import Tuple
+
 import numpy as np
 
 
@@ -35,7 +37,7 @@ Default_Motor = Motor(210, 181.5, 58.616, 87.69, 4.503, 3000)
 
 def calc_args(
     R1: float, R2: float, U: float, R_L: float, Motor: Motor | None = Default_Motor
-) -> tuple[tuple[float, float, float], float, float, float, float, float]:
+) -> tuple[float, float, float, float, float, float, float, float]:
     """计算需要展示的参数
 
     Args:
@@ -71,13 +73,13 @@ def calc_args(
 calc_args_2 = np.vectorize(calc_args, excluded=[0, 1, 2])
 
 if __name__ == "__main__":
-    print(calc_args(0.2, 200, 220, 5))
+    print(calc_args(0.2, 600, 220, 5))
     import numpy as np
     import matplotlib.pyplot as plt
 
-    calc2 = np.vectorize(calc_args, excluded=[0, 1, 2])
-    rl = np.linspace(100, 1, 1000)
-    arr = calc2(0.2, 200, 220, rl)
-    arr1 = np.asmatrix(arr)
-    plt.plot(rl, arr[5])
-    plt.show()
+    # calc2 = np.vectorize(calc_args, excluded=[0, 1, 2])
+    # rl = np.linspace(100, 1, 1000)
+    # arr = calc2(0.2, 200, 220, rl)
+    # arr1 = np.asmatrix(arr)
+    # plt.plot(rl, arr[5])
+    # plt.show()
