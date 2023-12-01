@@ -112,20 +112,16 @@ def draw_figure():
         for line in canvas.ax.get_lines():
             line.remove()
 
-    canvas_Power.ax.plot(R_L, result[0], label="P1")
-    canvas_Power.ax.plot(R_L, result[1], label="Pe")
-    canvas_Power.ax.plot(R_L, result[2], label="P2")
+    canvas_Power.ax.plot(R_L, result[0], label="P1", color="#435c0e")
+    canvas_Power.ax.plot(R_L, result[1], label="Pe", color="#008e9f")
+    canvas_Power.ax.plot(R_L, result[2], label="P2", color="#9199ff")
     canvas_Power.ax.legend()
 
-    canvas_E.ax.plot(R_L, result[3])
-
-    canvas_I.ax.plot(R_L, result[4])
-
-    canvas_n.ax.plot(R_L, result[5])
-
-    canvas_T.ax.plot(R_L, result[6])
-
-    canvas_eta.ax.plot(R_L, result[7])
+    canvas_E.ax.plot(R_L, result[3],color="#136f37")
+    canvas_I.ax.plot(R_L, result[4],color="#008068")
+    canvas_n.ax.plot(R_L, result[5],color="#008e9f")
+    canvas_T.ax.plot(R_L, result[6],color="#0098d1")
+    canvas_eta.ax.plot(R_L, result[7],color="#009cf4")
 
     for canvas in canvas_list:
         canvas.draw()  # canvas并不会自动更新
