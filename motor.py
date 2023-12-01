@@ -24,7 +24,7 @@ class Motor:
         self.R_20 = R_20
         self.T_e0 = T_e0
         self.I_10 = I_10
-        self.T_f = 0  # T_f，但是就这样吧
+        self.T_f = T_f
         self.n_N = n_N
 
 
@@ -51,10 +51,10 @@ def calc_args(
         分别为：电功率、电磁功率、机械功率；电动势；电流；转速；电磁转矩；效率
     """
     k_phi = Motor.R_20 / R2
-    n = k_phi * Motor.T_e0 * U / R1 - 2 * Motor.T_f * Motor.I_10
+    n = k_phi * Motor.T_e0 * U / R1
     tmp = (
-        k_phi**2 * Motor.T_e0 * Motor.E_10 / R1
-        + k_phi**2 * Motor.T_e0 * Motor.E_10 / R_L
+        k_phi**2 * Motor.T_e0 * Motor.E_10 * (1 / R1 + 1 / R_L)
+        + 2 * Motor.I_10 * Motor.T_f
     )
     n = n / tmp * Motor.n_N
     # 计算原理如果我有空就写到readme里
@@ -65,10 +65,11 @@ def calc_args(
     T_e = k_phi * I_1 / Motor.I_10 * Motor.T_e0
     P_1 = U * (I_1 + U / R2)
     P_e = T_e * n * 2 * pi / 60
-    P_2 = (T_e - Motor.T_f) * n * 2 * pi / 60
+    P_2 = (T_e - Motor.T_f * n / Motor.n_N) * n * 2 * pi / 60
     eta = P_2 / P_1
     return (P_1, P_e, P_2, E_1, I_1, n, T_e, eta)
-
+# TO DO:
+# 修改电机动力学模型，增加摩擦力系数
 
 calc_args_2 = np.vectorize(calc_args, excluded=[0, 1, 2])
 
