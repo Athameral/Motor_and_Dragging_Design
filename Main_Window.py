@@ -33,44 +33,48 @@ class Ui_MainUI(object):
         self.verticalLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.Select_M1 = QPushButton(MainUI)
-        self.Select_M1.setObjectName(u"Select_M1")
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(2)
-        sizePolicy.setVerticalStretch(2)
-        sizePolicy.setHeightForWidth(self.Select_M1.sizePolicy().hasHeightForWidth())
-        self.Select_M1.setSizePolicy(sizePolicy)
-
-        self.horizontalLayout_4.addWidget(self.Select_M1)
-
         self.Label_M1 = QLabel(MainUI)
         self.Label_M1.setObjectName(u"Label_M1")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy1.setHorizontalStretch(2)
-        sizePolicy1.setVerticalStretch(2)
-        sizePolicy1.setHeightForWidth(self.Label_M1.sizePolicy().hasHeightForWidth())
-        self.Label_M1.setSizePolicy(sizePolicy1)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(2)
+        sizePolicy.setHeightForWidth(self.Label_M1.sizePolicy().hasHeightForWidth())
+        self.Label_M1.setSizePolicy(sizePolicy)
+        self.Label_M1.setTextFormat(Qt.PlainText)
 
         self.horizontalLayout_4.addWidget(self.Label_M1)
+
+        self.Select_M1 = QComboBox(MainUI)
+        self.Select_M1.addItem("")
+        self.Select_M1.setObjectName(u"Select_M1")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy1.setHorizontalStretch(2)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.Select_M1.sizePolicy().hasHeightForWidth())
+        self.Select_M1.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_4.addWidget(self.Select_M1)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.Select_M2 = QPushButton(MainUI)
-        self.Select_M2.setObjectName(u"Select_M2")
-        sizePolicy.setHeightForWidth(self.Select_M2.sizePolicy().hasHeightForWidth())
-        self.Select_M2.setSizePolicy(sizePolicy)
-
-        self.horizontalLayout_5.addWidget(self.Select_M2)
-
         self.Label_M2 = QLabel(MainUI)
         self.Label_M2.setObjectName(u"Label_M2")
-        sizePolicy1.setHeightForWidth(self.Label_M2.sizePolicy().hasHeightForWidth())
-        self.Label_M2.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.Label_M2.sizePolicy().hasHeightForWidth())
+        self.Label_M2.setSizePolicy(sizePolicy)
+        self.Label_M2.setTextFormat(Qt.PlainText)
 
         self.horizontalLayout_5.addWidget(self.Label_M2)
+
+        self.Select_M2 = QComboBox(MainUI)
+        self.Select_M2.addItem("")
+        self.Select_M2.setObjectName(u"Select_M2")
+        sizePolicy1.setHeightForWidth(self.Select_M2.sizePolicy().hasHeightForWidth())
+        self.Select_M2.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_5.addWidget(self.Select_M2)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
@@ -126,8 +130,11 @@ class Ui_MainUI(object):
 
         self.Slider_R1 = QSlider(MainUI)
         self.Slider_R1.setObjectName(u"Slider_R1")
-        sizePolicy1.setHeightForWidth(self.Slider_R1.sizePolicy().hasHeightForWidth())
-        self.Slider_R1.setSizePolicy(sizePolicy1)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy6.setHorizontalStretch(2)
+        sizePolicy6.setVerticalStretch(2)
+        sizePolicy6.setHeightForWidth(self.Slider_R1.sizePolicy().hasHeightForWidth())
+        self.Slider_R1.setSizePolicy(sizePolicy6)
         self.Slider_R1.setOrientation(Qt.Horizontal)
 
         self.horizontalLayout.addWidget(self.Slider_R1)
@@ -160,8 +167,8 @@ class Ui_MainUI(object):
 
         self.Slider_R2 = QSlider(MainUI)
         self.Slider_R2.setObjectName(u"Slider_R2")
-        sizePolicy1.setHeightForWidth(self.Slider_R2.sizePolicy().hasHeightForWidth())
-        self.Slider_R2.setSizePolicy(sizePolicy1)
+        sizePolicy6.setHeightForWidth(self.Slider_R2.sizePolicy().hasHeightForWidth())
+        self.Slider_R2.setSizePolicy(sizePolicy6)
         self.Slider_R2.setOrientation(Qt.Horizontal)
 
         self.horizontalLayout_2.addWidget(self.Slider_R2)
@@ -194,8 +201,8 @@ class Ui_MainUI(object):
 
         self.Slider_U = QSlider(MainUI)
         self.Slider_U.setObjectName(u"Slider_U")
-        sizePolicy1.setHeightForWidth(self.Slider_U.sizePolicy().hasHeightForWidth())
-        self.Slider_U.setSizePolicy(sizePolicy1)
+        sizePolicy6.setHeightForWidth(self.Slider_U.sizePolicy().hasHeightForWidth())
+        self.Slider_U.setSizePolicy(sizePolicy6)
         self.Slider_U.setOrientation(Qt.Horizontal)
 
         self.horizontalLayout_3.addWidget(self.Slider_U)
@@ -222,28 +229,28 @@ class Ui_MainUI(object):
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.Figure_Name = QLabel(MainUI)
         self.Figure_Name.setObjectName(u"Figure_Name")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy6.setHorizontalStretch(5)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.Figure_Name.sizePolicy().hasHeightForWidth())
-        self.Figure_Name.setSizePolicy(sizePolicy6)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy7.setHorizontalStretch(5)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.Figure_Name.sizePolicy().hasHeightForWidth())
+        self.Figure_Name.setSizePolicy(sizePolicy7)
 
         self.horizontalLayout_6.addWidget(self.Figure_Name)
 
         self.Figure_SelectBox = QComboBox(MainUI)
         self.Figure_SelectBox.setObjectName(u"Figure_SelectBox")
-        sizePolicy6.setHeightForWidth(self.Figure_SelectBox.sizePolicy().hasHeightForWidth())
-        self.Figure_SelectBox.setSizePolicy(sizePolicy6)
+        sizePolicy7.setHeightForWidth(self.Figure_SelectBox.sizePolicy().hasHeightForWidth())
+        self.Figure_SelectBox.setSizePolicy(sizePolicy7)
 
         self.horizontalLayout_6.addWidget(self.Figure_SelectBox)
 
         self.Button_Draw = QPushButton(MainUI)
         self.Button_Draw.setObjectName(u"Button_Draw")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy7.setHorizontalStretch(2)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.Button_Draw.sizePolicy().hasHeightForWidth())
-        self.Button_Draw.setSizePolicy(sizePolicy7)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy8.setHorizontalStretch(2)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.Button_Draw.sizePolicy().hasHeightForWidth())
+        self.Button_Draw.setSizePolicy(sizePolicy8)
 
         self.horizontalLayout_6.addWidget(self.Button_Draw)
 
@@ -252,11 +259,11 @@ class Ui_MainUI(object):
 
         self.Figure_Frame = QFrame(MainUI)
         self.Figure_Frame.setObjectName(u"Figure_Frame")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy8.setHorizontalStretch(12)
-        sizePolicy8.setVerticalStretch(6)
-        sizePolicy8.setHeightForWidth(self.Figure_Frame.sizePolicy().hasHeightForWidth())
-        self.Figure_Frame.setSizePolicy(sizePolicy8)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy9.setHorizontalStretch(12)
+        sizePolicy9.setVerticalStretch(6)
+        sizePolicy9.setHeightForWidth(self.Figure_Frame.sizePolicy().hasHeightForWidth())
+        self.Figure_Frame.setSizePolicy(sizePolicy9)
         self.Figure_Frame.setMinimumSize(QSize(500, 350))
         self.Figure_Frame.setFrameShape(QFrame.StyledPanel)
         self.Figure_Frame.setFrameShadow(QFrame.Raised)
@@ -284,10 +291,13 @@ class Ui_MainUI(object):
 
     def retranslateUi(self, MainUI):
         MainUI.setWindowTitle(QCoreApplication.translate("MainUI", u"\u7535\u673a\u62d3\u5c55\u5b9e\u9a8c\u9879\u76ee", None))
-        self.Select_M1.setText(QCoreApplication.translate("MainUI", u"\u9009\u62e9\u7535\u673a\u6a21\u578b", None))
-        self.Label_M1.setText(QCoreApplication.translate("MainUI", u"TextLabel", None))
-        self.Select_M2.setText(QCoreApplication.translate("MainUI", u"\u9009\u62e9\u8d1f\u8f7d\u6a21\u578b", None))
-        self.Label_M2.setText(QCoreApplication.translate("MainUI", u"TextLabel", None))
+        self.Label_M1.setText(QCoreApplication.translate("MainUI", u"\u52a8\u529b\u7535\u673a", None))
+        self.Select_M1.setItemText(0, QCoreApplication.translate("MainUI", u"\u9ed8\u8ba4", None))
+
+        self.Label_M2.setText(QCoreApplication.translate("MainUI", u"\u8d1f\u8f7d\u7535\u673a", None))
+        self.Select_M2.setItemText(0, QCoreApplication.translate("MainUI", u"\u9ed8\u8ba4", None))
+
+        self.Select_M2.setCurrentText(QCoreApplication.translate("MainUI", u"\u9ed8\u8ba4", None))
         self.Label_R1.setText(QCoreApplication.translate("MainUI", u"\u8c03\u901f\u7535\u963b", None))
         self.Label_R1_unit.setText(QCoreApplication.translate("MainUI", u"\u03a9", None))
         self.Label_R2.setText(QCoreApplication.translate("MainUI", u"\u5f31\u78c1\u7535\u963b", None))
