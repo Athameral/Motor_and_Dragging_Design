@@ -68,12 +68,8 @@ def calc_args(
     P_2 = (T_e - Motor.T_f * n / Motor.n_N) * n * 2 * pi / 60
     eta = P_2 / P_1
     return (P_1, P_e, P_2, E_1, I_1, n, T_e, eta)
-# TO DO:
-# 修改电机动力学模型，增加摩擦力系数
 
 calc_args_2 = np.vectorize(calc_args, excluded=[0, 1, 2])
 
 if __name__ == "__main__":
     print(calc_args(0.2, 600, 220, 5))
-    import numpy as np
-    import matplotlib.pyplot as plt
