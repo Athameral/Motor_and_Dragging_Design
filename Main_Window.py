@@ -244,15 +244,15 @@ class Ui_MainUI(object):
 
         self.horizontalLayout_6.addWidget(self.Figure_SelectBox)
 
-        self.Button_Draw = QPushButton(MainUI)
-        self.Button_Draw.setObjectName(u"Button_Draw")
+        self.Button_Clear = QPushButton(MainUI)
+        self.Button_Clear.setObjectName(u"Button_Clear")
         sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
         sizePolicy8.setHorizontalStretch(2)
         sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.Button_Draw.sizePolicy().hasHeightForWidth())
-        self.Button_Draw.setSizePolicy(sizePolicy8)
+        sizePolicy8.setHeightForWidth(self.Button_Clear.sizePolicy().hasHeightForWidth())
+        self.Button_Clear.setSizePolicy(sizePolicy8)
 
-        self.horizontalLayout_6.addWidget(self.Button_Draw)
+        self.horizontalLayout_6.addWidget(self.Button_Clear)
 
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_6)
@@ -305,6 +305,6 @@ class Ui_MainUI(object):
         self.Label_U.setText(QCoreApplication.translate("MainUI", u"\u8f93\u5165\u7535\u538b", None))
         self.label_U_unit.setText(QCoreApplication.translate("MainUI", u"V", None))
         self.Figure_Name.setText(QCoreApplication.translate("MainUI", u"\u673a\u7535\u53c2\u6570\u66f2\u7ebf", None))
-        self.Button_Draw.setText(QCoreApplication.translate("MainUI", u"\u7ed8\u5236", None))
+        self.Button_Clear.setText(QCoreApplication.translate("MainUI", u"\u6e05\u9664", None))
     # retranslateUi
 

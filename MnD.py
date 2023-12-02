@@ -1,4 +1,4 @@
-from threading import Thread, Lock
+from threading import Thread
 
 import numpy as np
 from PySide6.QtWidgets import QApplication, QWidget
@@ -68,7 +68,7 @@ ui.Slider_U.valueChanged.connect(change_param_texts)
 
 # 选择绘制类型
 
-figure_type = ("功率", "电动势", "电流", "转速", "转矩", "效率")
+figure_type = ("功率", "电动势", "电流", "转速", "转矩", "效率", "电流-转速")
 ui.Figure_SelectBox.addItems(figure_type)
 
 # 定义绘制函数
@@ -78,8 +78,9 @@ canvas_I = MplCanvas()
 canvas_n = MplCanvas()
 canvas_T = MplCanvas()
 canvas_eta = MplCanvas()
+canvas_I_vs_n = MplCanvas()
 
-canvas_list = (canvas_Power, canvas_E, canvas_I, canvas_n, canvas_T, canvas_eta)
+canvas_list = (canvas_Power, canvas_E, canvas_I, canvas_n, canvas_T, canvas_eta, canvas_I_vs_n)
 
 for canvas in canvas_list:
     canvas.ax.grid()
@@ -90,14 +91,15 @@ canvas_I.ax.set_title("I")
 canvas_n.ax.set_title("n")
 canvas_T.ax.set_title("T")
 canvas_eta.ax.set_title("eta")
-
-figure_drawing = False
-
+canvas_I_vs_n.ax.set_title("I-n")
 
 # 一般来说，绘制很快，200ms左右就可以绘制完成
 # 当触发频率不太高时，不用自旋锁也没有什么问题
 # 但是在某些场景下，比如拖动滑动条时，触发会非常密集
 # 浪费资源且不说，这时一张图上会出现多条曲线，非常恐怖，兄弟。XD
+figure_drawing = False
+
+
 def draw_figure():
     global figure_drawing
     if figure_drawing:
@@ -117,11 +119,12 @@ def draw_figure():
     canvas_Power.ax.plot(R_L, result[2], label="P2", color="#9199ff")
     canvas_Power.ax.legend()
 
-    canvas_E.ax.plot(R_L, result[3],color="#136f37")
-    canvas_I.ax.plot(R_L, result[4],color="#008068")
-    canvas_n.ax.plot(R_L, result[5],color="#008e9f")
-    canvas_T.ax.plot(R_L, result[6],color="#0098d1")
-    canvas_eta.ax.plot(R_L, result[7],color="#009cf4")
+    canvas_E.ax.plot(R_L, result[3], color="#136f37")
+    canvas_I.ax.plot(R_L, result[4], color="#008068")
+    canvas_n.ax.plot(R_L, result[5], color="#008e9f")
+    canvas_T.ax.plot(R_L, result[6], color="#0098d1")
+    canvas_eta.ax.plot(R_L, result[7], color="#009cf4")
+    canvas_I_vs_n.ax.plot(result[5], result[4], color="#008068")
 
     # TO DO:
     # 保存Line2D对象，避免重复新建对象，以改进颜色变化问题
@@ -152,8 +155,15 @@ def switch_figure():
     pass
 
 
+def clear_figures():
+    for canvas in canvas_list:
+        canvas.ax.clear()
+        canvas.ax.grid()
+        canvas.draw()
+
+
 # 绑定绘制按钮和ComboBox
-ui.Button_Draw.clicked.connect(draw_8figures)
+ui.Button_Clear.clicked.connect(clear_figures)
 ui.Figure_SelectBox.currentIndexChanged.connect(switch_figure)
 
 switch_figure()

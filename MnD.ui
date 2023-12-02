@@ -309,7 +309,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="Button_Draw">
+        <widget class="QPushButton" name="Button_Clear">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>2</horstretch>
@@ -317,7 +317,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>绘制</string>
+          <string>清除</string>
          </property>
         </widget>
        </item>

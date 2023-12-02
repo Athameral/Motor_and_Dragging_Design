@@ -77,10 +77,3 @@ if __name__ == "__main__":
     print(calc_args(0.2, 600, 220, 5))
     import numpy as np
     import matplotlib.pyplot as plt
-
-    # calc2 = np.vectorize(calc_args, excluded=[0, 1, 2])
-    # rl = np.linspace(100, 1, 1000)
-    # arr = calc2(0.2, 200, 220, rl)
-    # arr1 = np.asmatrix(arr)
-    # plt.plot(rl, arr[5])
-    # plt.show()
